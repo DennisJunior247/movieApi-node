@@ -1,28 +1,7 @@
-const mongoose = require("mongoose");
 const express = require("express");
-const Joi = require("joi");
-const { object } = require("joi");
 const router = express.Router();
 
-const Genre = mongoose.model(
-  "Genre",
-  new mongoose.Schema({
-    name: {
-      type: String,
-      required: true,
-      maxlength: 10,
-      minlength: 3,
-    },
-  })
-);
-
-function validateGenre(genre) {
-  const schema = Joi.object({
-    name: Joi.string().min(3).required(),
-  });
-
-  return schema.validate(genre);
-}
+const { Genre, validateGenre } = require("../models/genres");
 
 router.get("/", async (req, res) => {
   const genres = await Genre.find();

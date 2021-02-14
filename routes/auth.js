@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
   if (!val) return res.status(400).send("ivalide pass or email");
 
   const token = user.gentoken();
-  res.header("x-auth", token).send(token);
+  res.header("x-auth-token", token).send(token);
 });
 
 function ValUser(genre) {

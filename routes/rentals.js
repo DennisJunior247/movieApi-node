@@ -1,5 +1,5 @@
-const { Rental, validate } = require("../models/rental");
-const { Movie } = require("../models/movie");
+const { Rental, validate } = require("../models/rentals");
+const { Movie } = require("../models/movies");
 const { Customer } = require("../models/customer");
 const express = require("express");
 const router = express.Router();

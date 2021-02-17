@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
 const isAdmin = require("../middleware/isAdmin");
-const asyncMiddleware = require("../middleware/asyncMiddleware");
+const asyncMiddleware = require("../middleware/async");
 const { Genre, validateGenre } = require("../models/genres");
 
 router.get("/", async (req, res) => {

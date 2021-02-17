@@ -7,7 +7,7 @@ function Val(req) {
     title: Joi.string().required().min(5).max(225),
     numberStock: Joi.string().required().min(0).max(225),
     dailyRentalRate: Joi.number().required().min(0).max(225),
-    genreId: Joi.string().required(),
+    genreId: Joi.objectId().required(),
   });
 
   return schema.validate(req);

@@ -1,5 +1,5 @@
 const { createLogger, format, transports, config } = require("winston");
-require("winston-mongodb");
+// require("winston-mongodb");
 require("express-async-errors");
 
 const logger = createLogger({
@@ -9,13 +9,13 @@ const logger = createLogger({
   transports: [
     new transports.File({ filename: " logfile.log" }),
 
-    new transports.MongoDB({
-      db: "mongodb://localhost/nmovieApi",
-      level: "info",
-      options: {
-        useUnifiedTopology: true,
-      },
-    }),
+    // new transports.MongoDB({
+    //   db: "mongodb://localhost/nmovieApi",
+    //   level: "info",
+    //   options: {
+    //     useUnifiedTopology: true,
+    //   },
+    // }),
   ],
   exceptionHandlers: [new transports.File({ filename: "exceptions.log" })],
 
